@@ -1,2 +1,2 @@
 # TrabalhoSO
-matriz com thread
+matriz threads
