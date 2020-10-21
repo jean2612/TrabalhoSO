@@ -1,4 +1,3 @@
-
 import java.util.Random;
 import java.util.Date;
 import java.util.Scanner;
@@ -67,7 +66,7 @@ public class Mat_class{
   public static void matrizAleatoria(){
     long timeInicio = System.currentTimeMillis();
     Random random = new Random();        
-    int m[][] = new int[10][10];
+    int m[][] = new int[1000][1000];
     
     int cont=0;
     int i=0;
@@ -77,31 +76,36 @@ public class Mat_class{
     
     ArrayList<Integer> vetOrdenado = new ArrayList<Integer>();
 
-    while(valor!=100){        
+    while(valor<1000000){        
       vetOrdenado.add(valor);
       valor++;
     }
 
     System.out.println(vetOrdenado.toString());
     Collections.shuffle(vetOrdenado);    
-    System.out.println(vetOrdenado.toString());    
+   // System.out.println(vetOrdenado.toString());    
+    
+    while(cont != 1000000){
+      System.out.println(vetOrdenado.get(cont));
 
-   // while(cont != 100){
-    for(cont=0; cont<100; cont++){ 
-    System.out.println(vetOrdenado.get(cont));
-
-      i = (vetOrdenado.get(cont))%10;
-      j = (vetOrdenado.get(cont))/10;
+      i = (vetOrdenado.get(cont))%1000;
+      j = (vetOrdenado.get(cont))/1000;
       numero = random.nextInt(100);
       m[i][j]=numero;
-     // cont++;
-    }                  
+      cont++;
+
+    }    
+    System.out.println("Aqui começa a matriz:");
+    int cachorro=0;  
     for(int q=0; q<m.length; q++){
       for(int w=0; w<m.length; w++){
           System.out.print(m[q][w] + " - ");
+          cachorro++;
       }
       System.out.println();
     }
+    System.out.println("Aqui termina a matriz:");            
+    System.out.println(cachorro);
     System.out.println("Tempo total de execução: " + ((System.currentTimeMillis() - timeInicio)) + " milisegundos.");
   }
  
