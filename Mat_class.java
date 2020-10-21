@@ -77,24 +77,24 @@ public class Mat_class{
     
     ArrayList<Integer> vetOrdenado = new ArrayList<Integer>();
 
-    while(valor!=1000){        
+    while(valor!=100){        
       vetOrdenado.add(valor);
       valor++;
     }
 
-  //  System.out.println(vetOrdenado.toString());
+    System.out.println(vetOrdenado.toString());
     Collections.shuffle(vetOrdenado);    
-   // System.out.println(vetOrdenado.toString());    
+    System.out.println(vetOrdenado.toString());    
 
-    while(cont != 1000){
-      System.out.println(vetOrdenado.get(cont));
+   // while(cont != 100){
+    for(cont=0; cont<100; cont++){ 
+    System.out.println(vetOrdenado.get(cont));
 
-      i = (vetOrdenado.get(cont))%100;
-      j = (vetOrdenado.get(cont))/100;
+      i = (vetOrdenado.get(cont))%10;
+      j = (vetOrdenado.get(cont))/10;
       numero = random.nextInt(100);
       m[i][j]=numero;
-      cont++;
-
+     // cont++;
     }                  
     for(int q=0; q<m.length; q++){
       for(int w=0; w<m.length; w++){
@@ -106,4 +106,3 @@ public class Mat_class{
   }
  
 }    
-
