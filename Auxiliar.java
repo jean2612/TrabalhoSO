@@ -7,24 +7,27 @@ public class Auxiliar {
   ArrayList<Integer> posicoes;
 
   // Vetor auxiliar para carregar os valores lidos da matriz de entrada
-  ArrayList<Integer> valores;
+  int[] valores;
 
-  public Auxiliar(Matriz matriz) {
-    this.matriz = matriz;
-    posicoes = new ArrayList<>();
+  public Auxiliar() {
+    this.matriz = Main.matrizEntrada;
 
-    // Inicializa o vetor auxiliar com valores de 0 até o número de elementos da matriz
-    for(int i = 0; i < matriz.length() * matriz.length(); i++){
-      posicoes.add(i);
+    if(Main.op == 2) {
+
+      posicoes = new ArrayList<>();
+
+      // Inicializa o vetor auxiliar com valores de 0 até o número de elementos da matriz
+      for (int i = 0; i < matriz.length() * matriz.length(); i++) {
+        posicoes.add(i);
+      }
     }
 
-    valores = new ArrayList<>();
-    // Inicializa o vetor auxiliar de valores com valor de 0;
-    for(int i = 0; i <= 100; i++){
-      posicoes.add(0);
-    }
+
+    // Inicializa o vetor auxiliar de valores com o o número possível de valores+1 (inicia em zero);
+    valores = new int[Main.MAX_NUM + 1];
   }
 
+  // Embaralha vetor posições
   public void shuffle(){
     Collections.shuffle(posicoes);
   }

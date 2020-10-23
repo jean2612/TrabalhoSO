@@ -1,2 +1,0 @@
-# TrabalhoSO
-matriz threads

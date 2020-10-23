@@ -7,8 +7,14 @@ public class Matriz {
         matriz = new int[length][length];
     }
 
+    // Retorna o valor da matriz na posição @x e @y
     public int get(int x, int y) {
         return matriz[x][y];
+    }
+
+    // Retorna o valor da matriz na posição equivalente em 1 dimensão
+    public int get(int posicao) {
+        return matriz[ posicao % matriz.length ][ posicao / matriz.length ];
     }
 
     public void set(int x, int y, int value) {
