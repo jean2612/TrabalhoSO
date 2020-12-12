@@ -93,7 +93,7 @@ public class Main {
          * Salva a última posição preenchida em um contador
          **/
         // Contador que salva última posição da matriz preenchida
-        numThreads = THREAD_COUNT <= 2? THREAD_COUNT : THREAD_COUNT/2;
+        numThreads = THREAD_COUNT <= 1? THREAD_COUNT : THREAD_COUNT/2;
         posPreenchida = new int[numThreads];
 
         latch = new CountDownLatch(numThreads*2);
@@ -158,7 +158,7 @@ public class Main {
          * Salva a última posição preenchida em um contador
          **/
         // Contador que salva última posição da matriz preenchida
-        numThreads = THREAD_COUNT <= 2? THREAD_COUNT : THREAD_COUNT/2;
+        numThreads = THREAD_COUNT <= 1? THREAD_COUNT : THREAD_COUNT/2;
         posPreenchida = new int[numThreads];
 
         latch = new CountDownLatch(numThreads*2);
